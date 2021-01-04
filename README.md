@@ -4,6 +4,7 @@ This app was built with a volunteer team, lead by Aaron Brvenik and Reed McGarve
 
 Contributers:
 Aaron Brvenik,
+Adam Nolan,
 Reed McGarvey,
 Sean McCormick, 
 Matthew Walker,
