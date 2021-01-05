@@ -10,7 +10,11 @@ Sean McCormick,
 Matthew Walker,
 Danny Molnar,
 Kaung Khine,
-Zach Schiding.
+Zach Schiding,
+Chris Toth,
+Chris Jones,
+Brady (lastName?)
+Steve Hansen
 
 
 We followed tutorials in the construction of this project, and once developed will be deployed to 
