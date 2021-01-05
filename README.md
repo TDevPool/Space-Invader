@@ -2,7 +2,7 @@
 Source for SpaceInvaderGame project. This project has no association and is of no similarity to the popular 70's game, "Space Invaders". 
 This app was built with a volunteer team, lead by Aaron Brvenik and Reed McGarvey. 
 
-Contributers:
+##Contributers:
 Aaron Brvenik,
 Adam Nolan,
 Reed McGarvey,
