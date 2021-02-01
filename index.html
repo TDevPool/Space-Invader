@@ -60,7 +60,9 @@
         <div id="info">
             <p>Move with arrow keys or swipe, fire with the space bar or touch. The invaders get faster and drop
                 more bombs as you complete each level!</p>
-            <p><a id="muteLink" href="#" onclick="toggleMute()">mute</a> | 
+            <p> <a id="muteLink" href="#" onclick="toggleMute()">mute</a> |
+                <a id="DownButton" href="#" onclick="volDown()">Volume Down</a> |
+                <a id="UpButton" href="#" onclick="volUp()">Volume Up</a> | 
                 <a href="http://github.com/dwmkerr/spaceinvaders">spaceinvaders on github</a> | 
                 <a href="http://github.com/dwmkerr">more projects</a> | <a href="http://www.dwmkerr.com">dwmkerr.com</a></p>
         </div>
@@ -120,6 +122,14 @@
             function toggleMute() {
                 game.mute();
                 document.getElementById("muteLink").innerText = game.sounds.mute ? "unmute" : "mute";
+            }
+            function volUp() {
+                game.volumeUp();
+                document.getElementById("UpButton").innerText = "Volume Up";
+            }
+            function volDown() {
+                game.volumeDown();
+                document.getElementById("DownButton").innerText = "Volume Down";
             }
         </script>
         <script type="text/javascript">
