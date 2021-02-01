@@ -150,9 +150,7 @@ Game.prototype.mute = function(mute) {
 };
 
 Game.prototype.volumeDown = function() {
-    console.log(volumeLevel)
     if(volumeLevel>0.02){
-    console.log(volumeLevel)
     volumeLevel = volumeLevel - 0.02;
     }
 };
