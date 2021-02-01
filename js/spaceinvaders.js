@@ -22,9 +22,11 @@
 */
 
 //  Constants for the keyboard.
-var KEY_LEFT = 37;
-var KEY_RIGHT = 39;
-var KEY_SPACE = 32;
+const KEY_LEFT = 37;
+const KEY_ALEFT = 65;
+const KEY_RIGHT = 39;
+const KEY_DRIGHT = 68;
+const KEY_SPACE = 32;
 
 //  Creates an instance of the Game class.
 function Game() {
@@ -213,7 +215,9 @@ Game.prototype.touchstart = function(s) {
 
 Game.prototype.touchend = function(s) {
     delete this.pressedKeys[KEY_RIGHT];
+    delete this.pressedKeys[KEY_DRIGHT];
     delete this.pressedKeys[KEY_LEFT];
+    delete this.pressedKeys[KEY_ALEFT];
 };
 
 Game.prototype.touchmove = function(e) {
@@ -221,10 +225,14 @@ Game.prototype.touchmove = function(e) {
     if (this.previousX > 0) {
         if (currentX > this.previousX) {
             delete this.pressedKeys[KEY_LEFT];
+            delete this.pressedKeys[KEY_ALEFT]
             this.pressedKeys[KEY_RIGHT] = true;
+            this.pressedKeys[KEY_DRIGHT] = true;
         } else {
             delete this.pressedKeys[KEY_RIGHT];
+            delete this.pressedKeys[KEY_DRIGHT];
             this.pressedKeys[KEY_LEFT] = true;
+            this.pressedKeys[KEY_ALEFT] = true;
         }
     }
     this.previousX = currentX;
@@ -383,7 +391,13 @@ PlayState.prototype.update = function(game, dt) {
     if(game.pressedKeys[KEY_LEFT]) {
         this.ship.x -= this.shipSpeed * dt;
     }
+    if(game.pressedKeys[KEY_ALEFT]) {
+        this.ship.x -= this.shipSpeed * dt;
+    }
     if(game.pressedKeys[KEY_RIGHT]) {
+        this.ship.x += this.shipSpeed * dt;
+    }
+    if(game.pressedKeys[KEY_DRIGHT]) {
         this.ship.x += this.shipSpeed * dt;
     }
     if(game.pressedKeys[KEY_SPACE]) {
