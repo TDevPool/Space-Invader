@@ -27,6 +27,7 @@ const KEY_ALEFT = 65;
 const KEY_RIGHT = 39;
 const KEY_DRIGHT = 68;
 const KEY_SPACE = 32;
+let volumeLevel = 0.1;
 
 //  Creates an instance of the Game class.
 function Game() {
@@ -148,6 +149,19 @@ Game.prototype.mute = function(mute) {
     }
 };
 
+Game.prototype.volumeDown = function() {
+    console.log(volumeLevel)
+    if(volumeLevel>0.02){
+    console.log(volumeLevel)
+    volumeLevel = volumeLevel - 0.02;
+    }
+};
+
+Game.prototype.volumeUp = function() {
+    if(volumeLevel<0.98)
+    volumeLevel = volumeLevel + 0.02;
+};
+
 //  The main loop.
 function GameLoop(game) {
     var currentState = game.currentState();
@@ -253,13 +267,7 @@ function WelcomeState() {
 
 WelcomeState.prototype.enter = function(game) {
 
-    // Create and load the sounds.
-    // game.sounds = new Sounds();
-    // game.sounds.init();
-    // console.log("welcomestate Soundloading? ")
-    // game.sounds.loadSound('shoot', 'sounds/shoot.wav');
-    // game.sounds.loadSound('bang', 'sounds/bang.wav');
-    // game.sounds.loadSound('explosion', 'sounds/explosion.wav');
+    
 };
 
 WelcomeState.prototype.update = function (game, dt) {
@@ -802,6 +810,7 @@ function GameState(updateProc, drawProc, keyDown, keyUp, enter, leave) {
 
 function playSound(name){
     var noise = document.getElementById(name);
+    noise.volume = volumeLevel;
     noise.play();
 }
 
