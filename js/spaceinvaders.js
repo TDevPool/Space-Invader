@@ -5,8 +5,6 @@
 
 */
 
-
-
 /*  
     Game Class
 
@@ -42,8 +40,8 @@ function Game() {
         invaderInitialVelocity: 25,
         invaderAcceleration: 0,
         invaderDropDistance: 20,
-        rocketVelocity: 120 ,
-        rocketMaxFireRate: 200,
+        rocketVelocity: 120,
+        rocketMaxFireRate: 2,
         gameWidth: 400,
         gameHeight: 300,
         fps: 50,
@@ -152,13 +150,7 @@ Game.prototype.mute = function(mute) {
 };
 
 Game.prototype.volumeDown = function() {
-<<<<<<< Updated upstream
     if(volumeLevel>0.02){
-=======
-    console.log(volumeLevel)
-    if(volumeLevel>0.02){
-    console.log(volumeLevel)
->>>>>>> Stashed changes
     volumeLevel = volumeLevel - 0.02;
     }
 };
@@ -598,7 +590,7 @@ PlayState.prototype.draw = function(game, dt, ctx) {
 
     //  Draw ship.
     ctx.fillStyle = '#999999';
-    ctx.drawImage(shipImage,this.ship.x - (this.ship.width / 2), this.ship.y - (this.ship.height / 2), this.ship.width, this.ship.height);
+    ctx.drawImage(shipImage, this.ship.x - (this.ship.width / 2), this.ship.y - (this.ship.height / 2), this.ship.width, this.ship.height);
 
 
     //  Draw invaders.
