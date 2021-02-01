@@ -5,6 +5,8 @@
 
 */
 
+
+
 /*  
     Game Class
 
@@ -40,8 +42,8 @@ function Game() {
         invaderInitialVelocity: 25,
         invaderAcceleration: 0,
         invaderDropDistance: 20,
-        rocketVelocity: 120,
-        rocketMaxFireRate: 2,
+        rocketVelocity: 120 ,
+        rocketMaxFireRate: 200,
         gameWidth: 400,
         gameHeight: 300,
         fps: 50,
@@ -150,7 +152,13 @@ Game.prototype.mute = function(mute) {
 };
 
 Game.prototype.volumeDown = function() {
+<<<<<<< Updated upstream
     if(volumeLevel>0.02){
+=======
+    console.log(volumeLevel)
+    if(volumeLevel>0.02){
+    console.log(volumeLevel)
+>>>>>>> Stashed changes
     volumeLevel = volumeLevel - 0.02;
     }
 };
@@ -582,16 +590,24 @@ PlayState.prototype.draw = function(game, dt, ctx) {
     //  Clear the background.
     ctx.clearRect(0, 0, game.width, game.height);
     
+    const shipImage = new Image();
+    shipImage.src = 'ship.png';
+
+    const alienImage = new Image();
+    alienImage.src = 'Space_invaders_alien.jpg';
+
     //  Draw ship.
     ctx.fillStyle = '#999999';
-    ctx.fillRect(this.ship.x - (this.ship.width / 2), this.ship.y - (this.ship.height / 2), this.ship.width, this.ship.height);
+    ctx.drawImage(shipImage,this.ship.x - (this.ship.width / 2), this.ship.y - (this.ship.height / 2), this.ship.width, this.ship.height);
+
 
     //  Draw invaders.
     ctx.fillStyle = '#006600';
     for(var i=0; i<this.invaders.length; i++) {
         var invader = this.invaders[i];
-        ctx.fillRect(invader.x - invader.width/2, invader.y - invader.height/2, invader.width, invader.height);
+        ctx.drawImage(alienImage, invader.x - invader.width/2, invader.y - invader.height/2, invader.width, invader.height);
     }
+    
 
     //  Draw bombs.
     ctx.fillStyle = '#ff5555';

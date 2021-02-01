@@ -41,15 +41,15 @@
         </style>
     </head>
     <audio id="bang">
-        <source src="sounds/bang.wav" type="audio/wav">
+        <source src="sounds/bang.wav" type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
       <audio id="explode">
-        <source src="sounds/explosion.wav" type="audio/wav">
+        <source src="sounds/explosion.wav" type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
       <audio id="shoot">
-        <source src="sounds/shoot.wav" type="audio/wav">
+        <source src="sounds/shoot.wav" type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
     <body>
@@ -63,8 +63,11 @@
             <p> <a id="muteLink" href="#" onclick="toggleMute()">mute</a> |
                 <a id="DownButton" href="#" onclick="volDown()">Volume Down</a> |
                 <a id="UpButton" href="#" onclick="volUp()">Volume Up</a> | 
+<<<<<<< Updated upstream
                 <a href="http://github.com/dwmkerr/spaceinvaders">spaceinvaders on github</a> | 
                 <a href="http://github.com/dwmkerr">more projects</a> | <a href="http://www.dwmkerr.com">dwmkerr.com</a></p>
+=======
+>>>>>>> Stashed changes
         </div>
         
         
@@ -95,8 +98,8 @@
             //  Listen for keyboard events.
             window.addEventListener("keydown", function keydown(e) {
                 var keycode = e.which || window.event.keycode;
-                //  Supress further processing of left/right/space (37/29/32)
-                if(keycode == 37 || keycode == 39 || keycode == 32) {
+                //  Supress further processing of left/right/space (37/39/32/65/68)
+                if(keycode == 37 || keycode == 39 || keycode == 32 || keycode == 65 || keycode == 68) {
                     e.preventDefault();
                 }
                 game.keyDown(keycode);
